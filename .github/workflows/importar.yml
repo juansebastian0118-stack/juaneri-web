@@ -1,0 +1,20 @@
+name: Importar sitio
+on: push
+permissions:
+  contents: write
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Descargar archivos
+        run: |
+          B=https://splitlukas--xkmym33j51.expo.app/juaneri-web
+          for f in index.html splitlukas/index.html splitlukas/privacidad.html splitlukas/soporte.html img/app-planes.webp; do
+            mkdir -p "$(dirname "$f")"; curl -fsSL "$B/$f" -o "$f"
+          done
+          git config user.name "Juaneri"
+          git config user.email "juan.falla.g@juaneri.com"
+          git add -A
+          git commit -m "SplitLukas: Premium por persona, Pase de Viaje para 9 amigos y prueba de 14 días" || echo "sin cambios"
+          git push
