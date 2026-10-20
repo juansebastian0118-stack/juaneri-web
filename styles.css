@@ -38,7 +38,7 @@ img { max-width: 100%; display: block; }
 .nav nav a { color: #c9cede; text-decoration: none; font-weight: 500; }
 .nav nav a:hover { color: #fff; }
 
-.hero { padding: 72px 0 88px; }
+.hero { padding-top: 72px; padding-bottom: 88px; }
 .hero .eyebrow { color: var(--mango); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; font-size: 14px; }
 .hero h1 { font-size: clamp(40px, 7vw, 72px); font-weight: 800; letter-spacing: -2px; margin: 12px 0 20px; max-width: 14ch; }
 .hero p { color: #c9cede; font-size: 20px; max-width: 46ch; margin: 0 0 28px; }
@@ -95,3 +95,19 @@ footer a { color: var(--muted); }
 .doc li { margin-bottom: 6px; }
 .faq details { border-top: 1px solid var(--line); padding: 14px 0; }
 .faq summary { font-weight: 700; cursor: pointer; }
+
+/* Logo tipo Cash Flow */
+.brand { font-family: "Nunito", "DM Sans", sans-serif; font-weight: 900; font-size: 28px; letter-spacing: -0.3px; gap: 0; }
+.wm-a { color: #5b9bff; }
+.wm-b { color: #c27ad6; }
+
+/* Pantallas del prototipo */
+.app .shot.phones { gap: 14px; padding: 28px 20px; }
+.app .shot.phones img { width: calc((100% - 28px) / 3); max-width: 200px; height: auto; max-height: none; border-radius: 18px; }
+.app .shot.phones img:nth-child(2) { transform: translateY(-14px); }
+.gallery-sec { padding-bottom: 0; }
+.gallery { display: grid; gap: 20px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.gallery figure { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.gallery img { width: 100%; height: auto; border-radius: 20px; box-shadow: 0 12px 30px rgba(27,35,64,.18); }
+.gallery figcaption { text-align: center; font-weight: 700; color: var(--ink); }
+@media (min-width: 860px) { .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; } }
