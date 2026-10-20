@@ -58,6 +58,9 @@ section { padding: 72px 0; }
 .app { background: var(--card); border-radius: var(--radius); overflow: hidden; display: grid; grid-template-columns: 1fr; border: 1px solid var(--line); }
 .app .shot { background: var(--night); display: flex; align-items: center; justify-content: center; padding: 24px; min-height: 260px; }
 .app .shot img { border-radius: 14px; box-shadow: 0 12px 30px rgba(0,0,0,.25); max-height: 420px; width: auto; }
+.app .shot.stack { flex-direction: column; gap: 16px; }
+.app .shot figure { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.app .shot figcaption { color: #c9cede; font-size: 14px; text-align: center; }
 .app .body { padding: 28px; display: flex; flex-direction: column; gap: 12px; }
 .app h3 { font-size: 30px; letter-spacing: -0.5px; }
 .app p { color: var(--muted); margin: 0; }
