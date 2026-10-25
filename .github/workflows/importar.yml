@@ -1,0 +1,27 @@
+name: importar
+on:
+  push:
+    paths: ['.github/workflows/importar.yml']
+permissions:
+  contents: write
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Descargar archivos
+        run: |
+          set -e
+          B=https://splitlukas.expo.app/tmpweb
+          curl -fsSL $B/index.txt -o index.html
+          curl -fsSL $B/styles.css -o styles.css
+          curl -fsSL $B/splitlukas/index.txt -o splitlukas/index.html
+          curl -fsSL $B/splitlukas/privacidad.txt -o splitlukas/privacidad.html
+          curl -fsSL $B/splitlukas/soporte.txt -o splitlukas/soporte.html
+          grep -q 'Precio por país' splitlukas/index.html
+          git rm -q .github/workflows/importar.yml
+          git config user.name 'Juaneri'
+          git config user.email 'juan.falla.g@juaneri.com'
+          git add -A
+          git commit -m 'SplitLukas global: idiomas, pagos rápidos por país, precios por país y nuevos límites del plan gratis'
+          git push
