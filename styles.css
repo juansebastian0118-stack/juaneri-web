@@ -111,3 +111,8 @@ footer a { color: var(--muted); }
 .gallery img { width: 100%; height: auto; border-radius: 20px; box-shadow: 0 12px 30px rgba(27,35,64,.18); }
 .gallery figcaption { text-align: center; font-weight: 700; color: var(--ink); }
 @media (min-width: 860px) { .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; } }
+.prices { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 15px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.prices th, .prices td { padding: 10px 12px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.prices th:first-child, .prices td:first-child { text-align: left; white-space: normal; min-width: 160px; }
+.prices thead th { font-weight: 700; }
+.prices tbody tr:last-child td { border-bottom: 0; }
