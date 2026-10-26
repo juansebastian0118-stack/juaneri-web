@@ -1,0 +1,20 @@
+name: Importar sitio
+on: push
+permissions:
+  contents: write
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Descargar archivos
+        run: |
+          B=https://splitlukas--2gpfzwjtz8.expo.app/tmpweb
+          curl -fsSL "$B/splitlukas/soporte.txt" -o splitlukas/soporte.html
+          curl -fsSL "$B/splitlukas/privacidad.txt" -o splitlukas/privacidad.html
+          git rm -q .github/workflows/importar.yml
+          git config user.name "Juaneri"
+          git config user.email "juan.falla.g@juaneri.com"
+          git add -A
+          git commit -m "SplitLuka$: soporte en support.splitlukas@juaneri.com" || echo "sin cambios"
+          git push
