@@ -1,0 +1,19 @@
+name: Importar sitio
+on: push
+permissions:
+  contents: write
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Descargar archivos
+        run: |
+          B=https://splitlukas--22daetc2bk.expo.app/tmpweb
+          for f in index soporte privacidad; do curl -fsSL "$B/splitlukas/$f.txt" -o splitlukas/$f.html; done
+          git rm -q .github/workflows/importar.yml
+          git config user.name "Juaneri"
+          git config user.email "juan.falla.g@juaneri.com"
+          git add -A
+          git commit -m "SplitLuka$: Pase de Viaje, tú y 9 personas más por un mes" || echo "sin cambios"
+          git push
