@@ -1,0 +1,21 @@
+name: Importar
+on:
+  push:
+    paths: ['.github/workflows/importar.yml']
+permissions:
+  contents: write
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          set -e
+          U=https://splitlukas--v3rx0dyqbu.expo.app/tmpweb
+          for f in proto-bienvenida proto-inicio proto-grupo proto-gasto proto-saldar app-planes proto-resumen; do curl -fsSL $U/$f.b64.txt | base64 -d > img/$f.webp; done
+          git config user.name 'github-actions'
+          git config user.email 'github-actions@users.noreply.github.com'
+          git rm -q .github/workflows/importar.yml
+          git add -A
+          git commit -m 'Capturas de SplitLuka$ actualizadas'
+          git push
