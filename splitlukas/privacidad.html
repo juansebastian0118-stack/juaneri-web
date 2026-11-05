@@ -5,19 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Política de privacidad · SplitLuka$</title>
 <link rel="icon" href="../img/splitlukas-icon.png">
+<link rel="alternate" hreflang="es" href="https://juaneri.com/splitlukas/privacidad.html">
+<link rel="alternate" hreflang="en" href="https://juaneri.com/splitlukas/privacy.html">
+<link rel="alternate" hreflang="pt" href="https://juaneri.com/splitlukas/privacidade.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;700&family=Nunito:wght@900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
+<script>
+  // Muestra la página en el idioma del navegador (inglés o portugués), salvo que la persona haya elegido español.
+  (function () {
+    if (/[?&]lang=es/.test(location.search)) return;
+    var l = (navigator.language || 'es').toLowerCase();
+    if (l.indexOf('en') === 0) location.replace('privacy.html');
+    else if (l.indexOf('pt') === 0) location.replace('privacidade.html');
+  })();
+</script>
 </head>
 <body>
 <header class="top">
   <div class="wrap nav">
     <a class="brand" href="/"><span class="wm-a">Juan</span><span class="wm-b">eri</span></a>
-    <nav aria-label="Principal"><a href="./">SplitLuka$</a><a href="soporte.html">Soporte</a></nav>
+    <nav aria-label="Principal"><a href="./">SplitLuka$</a><a href="soporte.html?lang=es">Soporte</a></nav>
   </div>
 </header>
 <main class="wrap">
   <article class="doc">
+    <p style="margin:0 0 8px;font-weight:700"><span>Español</span> · <a href="privacy.html" hreflang="en">English</a> · <a href="privacidade.html" hreflang="pt">Português</a></p>
     <h1>Política de privacidad de SplitLuka$</h1>
     <p class="meta">Vigente desde el 25 de octubre de 2026</p>
 
